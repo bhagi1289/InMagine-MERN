@@ -34,11 +34,9 @@ app.use(morgan(':method :url :status :res[content-length] - :response-time ms'))
 mongdb.connect();
 
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://inmagine-frontend.onrender.com'); // Replace with your client's domain
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  res.setHeader('Set-Cookie', 'cookieName=cookieValue; Secure; SameSite=None');
-
+  res.setHeader('Access-Control-Allow-Origin', 'https://inmagine-frontend.onrender.com');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');  
+  
   next();
 });
 
