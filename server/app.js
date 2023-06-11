@@ -7,6 +7,8 @@ require('dotenv').config();
 const cors = require("cors");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
+var cookieParser = require('cookie-parser')
+
 
 
 
@@ -22,6 +24,8 @@ const passport = require("./passport/setup");
 const { SECRET } = process.env;
 
 const app = express();
+app.use(cookieParser())
+
 app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
