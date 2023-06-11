@@ -23,7 +23,7 @@ const Table = ({ item }) => {
     // console.log(item);
   item.status = editedStatus;
   // axios.put(`${BASE_URL}/tables/${item._id}`,item,options);
-  HTTPClient.put('tables/${item._id}', item);
+  HTTPClient.put(`tables/${item._id}`, item);
   
   };
 
