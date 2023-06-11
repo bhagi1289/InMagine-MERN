@@ -25,9 +25,9 @@ function NavigationBar() {
       <Container>
         <Navbar.Brand href="#home">Restaurant</Navbar.Brand>
         <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#features">Features</Nav.Link>
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
+          <Nav.Link href="#home" disabled>Home</Nav.Link>
+          <Nav.Link href="#features" disabled>Features</Nav.Link>
+          <Nav.Link href="#pricing" disabled>Pricing</Nav.Link>
         </Nav>
 
         {loggedIn && (
