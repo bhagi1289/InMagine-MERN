@@ -39,10 +39,11 @@ app.use((req, res, next) => {
 });
 
 const corsOptions = {
-  origin: ["http://localhost:3001", "https://inmagine-frontend.onrender.com"],
+  origin: true,
   credentials: true,
 };
 app.use(cors(corsOptions));
+app.options('*', cors(corsConfig));
 
 app.use(session({
   secret: SECRET,
