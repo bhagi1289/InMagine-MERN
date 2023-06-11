@@ -31,7 +31,7 @@ mongdb.connect();
 
 
 const corsOptions = {
-  origin: ["http://localhost:3001", "https://inmagine-frontend.onrender.com/"],
+  origin: ["http://localhost:3001", "https://inmagine-frontend.onrender.com"],
   credentials: true,
 };
 app.use(cors(corsOptions));
