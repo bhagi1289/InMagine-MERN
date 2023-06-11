@@ -59,6 +59,13 @@ app.use("/tables", tableRoutes);
 app.use("/config", configRoutes);
 app.use("/queue", queueRoutes);
 
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://inmagine-frontend.onrender.com'); // Replace with your client's domain
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+
 app.use((error, req, res, next) => {
   // console.log(error);
   res.status(500).json({ message: error.message });
