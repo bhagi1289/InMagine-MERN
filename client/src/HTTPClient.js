@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const HTTPClient = axios.create({
-    baseURL: 'http://localhost:3000',
+    baseURL: 'https://inmagine-backend.onrender.com',
     withCredentials:true
   });
 
