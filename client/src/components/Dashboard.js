@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 // import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Nav from 'react-bootstrap/Nav';
-import { setMaxTableCount, setChairsPerTable } from '../app/actions';
+import { setMaxTableCount, setChairsPerTable, logout } from '../app/actions';
 import ConfigCard from "./ConfigCard";
 import TableCard from "./TableCard";
 import Queue from "./Queue";
@@ -39,8 +39,10 @@ const DashBoard = ({ data }) => {
             } else {
                 //navigate('/login')
                 navigate('/login');
+
             }
         } catch (error) {
+            dispatch(logout());
             navigate('/login');
         }
     }
