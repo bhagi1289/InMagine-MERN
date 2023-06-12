@@ -36,10 +36,6 @@ mongdb.connect();
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', 'https://inmagine-frontend.onrender.com');
   res.setHeader('Access-Control-Allow-Credentials', 'true');  
-  const cookieName = 'api';
-  const cookieValue = process.env.SECRET;
-  res.cookie(cookieName, cookieValue, { secure: true, sameSite: 'none' });
-
 
   next();
 });
@@ -56,6 +52,10 @@ app.use(session({
   resave: false,
   expires: new Date(Date.now() + 60),
   saveUninitialized: true,
+  cookie: {
+    sameSite: "none",
+    secure: true
+  },
   store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 
