@@ -13,6 +13,9 @@ npm install
 node server.js
 ```
 
+Please change backend url in HTTPClient.js
+ baseURL: 'https://inmagine-backend.onrender.com' to 'your backed url'
+ 
 Frontend
 ```
 cd client
